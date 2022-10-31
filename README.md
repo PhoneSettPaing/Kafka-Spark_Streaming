@@ -30,3 +30,14 @@ This is the data platform architecture that I have created for this project. Whe
 ## Data Source
 
 Since I don’t have data from the shop and a front-end application to mimic checking out products, I find similar type of [sales dataset](https://www.kaggle.com/datasets/knightbearr/sales-product-data) on Kaggle and directly use those dataset in Kafka Producer instead.
+
+## Data Preparation
+
+As it is not the actual data from the shop but from Kaggle, the data need to be clean and remove some unnecessary columns which is no need for my use case. The detail process of preparing data can be seen in Data_Preparation.ipynb. After cleaning the data, I have got two datasets. One is for sales data (Processed_Data.csv) and another dataset is stock quantity data (Stock_Quantity.csv) created base on sales data.
+
+Sample of Sales Data
+![alt text](Images/sales_data.PNG)
+
+Stock Quantity Data
+![alt text](Images/stock_quantity.PNG)
+
