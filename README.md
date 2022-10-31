@@ -33,7 +33,7 @@ Since I don’t have data from the shop and a front-end application to mimic che
 
 ## Data Preparation
 
-As it is not the actual data from the shop but from Kaggle, the data need to be clean and remove some unnecessary columns which is no need for my use case. The detail process of preparing data can be seen in Data_Preparation.ipynb. After cleaning the data, I have got two datasets. One is for sales data (Processed_Data.csv) and another dataset is stock quantity data (Stock_Quantity.csv) created base on sales data.
+As it is not the actual data from the shop but from Kaggle, the data need to be clean and remove some unnecessary columns which is no need for my use case. The detail process of preparing data can be seen in [Data_Preparation.ipynb](Codes/Data_Preparation.ipynb). After cleaning the data, I have got two datasets. One is for sales data ([Processed_Data.csv](Prepared_Data/Processed_Data.csv)) and another dataset is stock quantity data ([Stock_Quantity.csv](Prepared_Data/Stock_Quantity.csv)) created base on sales data.
 
 Sample of Sales Data
 ![alt text](Images/sales_data.PNG)
@@ -43,23 +43,25 @@ Stock Quantity Data<br />
 
 ## Data Producer
 
-Writing a Kafka Producer (sales_data_producer.py) to stream sales data (Processed_Data.csv) to “sales_topic” topic in Kafka server.
+Writing a Kafka Producer ([sales_data_producer.py](Codes/sales_data_producer.py)) to stream sales data ([Processed_Data.csv](Prepared_Data/Processed_Data.csv)) to “sales_topic” topic in Kafka server.
 
 ## Data Storage
 
-Writing a python script (create_database_tables_mysql.py) to create database and tables in MySQL to store processed data.
+Writing a python script ([create_database_tables_mysql.py](Codes/create_database_tables_mysql.py)) to create database and tables in MySQL to store processed data.
 
 ## Spark Structure Streaming
 
-Writing a python script (structure_streaming.py) to ingest, process and store data from “sales_topic” Kafka topic into MongoDB and MySQL.
+Writing a python script ([structure_streaming.py](Codes/structure_streaming.py)) to ingest, process and store data from “sales_topic” Kafka topic into MongoDB and MySQL.
 
 In this script, a spark session read stream data from Kafka topic as a stream dataframe. From this stream dataframe, sales data is extracted and store this raw sales data into MongoDB. 
 
-The extracted sales data is transformed by splitting Sale_Date column into Date, Day, Month and Year Columns. The Sale_Date column is then dropped as the time (hours, minutes, seconds) that the sale happen is not important for my use case but Day, Month and Year are as they are needed for daily, monthly and yearly sales. This transformed data is stored into sales table in MySQL.
+The extracted sales data is transformed by splitting "Sale_Date" column into "Date", "Day", "Month" and "Year" Columns. The "Sale_Date" column is then dropped as the time (hours, minutes, seconds) that the sale happen is not important for my use case but Day, Month and Year are as they are needed for daily, monthly and yearly sales. This transformed data is then stored into sales table in MySQL.
 
-Read the Stock Quantity data (Stock_Quantity.csv) from local device and then the extracted sales data is transformed by dropping Sale_ID, Each_Price, Sale_Date and Sales columns for joining with Stock Quantity data.
+Read the Stock Quantity data ([Stock_Quantity.csv](Prepared_Data/Stock_Quantity.csv)) from local device and then the extracted sales data is transformed by dropping "Sale_ID", "Each_Price", "Sale_Date" and "Sales" columns for joining with Stock Quantity data.
 
-The Stock Quantity data and transformed sales data are inner join on Product column. Joint data is then group by Product and Stock_Quantity columns. The column Quantity_Sold in grouped data is aggregated by summing and renamed the column as Total_Quantity_Sold. The aggregated data is then store into stocks table in MySQL.
+The Stock Quantity data and transformed sales data are inner join on "Product" column. Joint data is then group by "Product" and "Stock_Quantity" columns. The column "Quantity_Sold" in grouped data is aggregated by summing and renamed the column as "Total_Quantity_Sold". The aggregated data is then store into stocks table in MySQL.
+
+For more detail and clear understanding, read [structure_streaming.py](Codes/structure_streaming.py) code.
 
 ## Dashboard
 
