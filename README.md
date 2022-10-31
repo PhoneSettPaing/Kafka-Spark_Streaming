@@ -70,8 +70,7 @@ Created a dashboard in Apache Superset using data from sales and stocks tables i
 
 ## Running the codes
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=4RGbZoFiTvQ" target="_blank"><img src="http://img.youtube.com/vi/4RGbZoFiTvQ/0.jpg" 
-alt="Structure_Streaming" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=4RGbZoFiTvQ" target="_blank"><img src="http://img.youtube.com/vi/4RGbZoFiTvQ/0.jpg"></a>
 
 This is the video showing how the entire real-time sales data analysis system work after running all the codes. But it doesn’t show the entire sales data streaming as it will take a long time to stream the entire sales data.
 
