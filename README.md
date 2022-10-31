@@ -72,3 +72,11 @@ Created a dashboard in Apache Superset using data from sales and stocks tables i
 
 This is the video showing how the entire real-time sales data analysis system work after running all the codes. But it doesn’t show the entire sales data streaming as it will take a long time to stream the entire sales data.
 
+## Solution
+
+Getting answer to problems facing at the shop:
+From the dashboard, I can find out daily, monthly or yearly Total Sales by using the filters. By looking at the "Total Sales by Products" chart, I can find out which product produce highest sales and with the use of filters, I can find out what products produce highest sales in which month. If one of the orange bars (Total_Quantity_Sold) in “Numbers of Product in Stock” chart is almost filling up the grey bar (Stock_Quantity) to nearly 31000, that means that product needs to be restocked. Check the top selling product in each month by using the filters and looking at the “Total Numbers of Each Product Sold” chart. Refill those items if require.
+
+## Conclusion
+
+I am able to solve the problems facing at the shop using this system. So, building and using this system will be a great benefit to the business but we still need to consider other factors such as budgets for buying computers, etc. and electricity as we sometime don’t get electricity 24/7 in our country.  
