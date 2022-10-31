@@ -41,3 +41,29 @@ Sample of Sales Data
 Stock Quantity Data<br />
 ![alt text](Images/stock_quantity.PNG)
 
+## Data Producer
+
+Writing a Kafka Producer (sales_data_producer.py) to stream sales data (Processed_Data.csv) to “sales_topic” topic in Kafka server.
+
+## Data Storage
+
+Writing a python script (create_database_tables_mysql.py) to create database and tables in MySQL to store processed data.
+
+## Spark Structure Streaming
+
+Writing a python script (structure_streaming.py) to ingest, process and store data from “sales_topic” Kafka topic into MongoDB and MySQL.
+
+In this script, a spark session read stream data from Kafka topic as a stream dataframe. From this stream dataframe, sales data is extracted and store this raw sales data into MongoDB. 
+
+The extracted sales data is transformed by splitting Sale_Date column into Date, Day, Month and Year Columns. The Sale_Date column is then dropped as the time (hours, minutes, seconds) that the sale happen is not important for my use case but Day, Month and Year are as they are needed for daily, monthly and yearly sales. This transformed data is stored into sales table in MySQL.
+
+Read the Stock Quantity data (Stock_Quantity.csv) from local device and then the extracted sales data is transformed by dropping Sale_ID, Each_Price, Sale_Date and Sales columns for joining with Stock Quantity data.
+
+The Stock Quantity data and transformed sales data are inner join on Product column. Joint data is then group by Product and Stock_Quantity columns. The column Quantity_Sold in grouped data is aggregated by summing and renamed the column as Total_Quantity_Sold. The aggregated data is then store into stocks table in MySQL.
+
+## Dashboard
+
+Created a dashboard in Apache Superset using data from sales and stocks tables in MySQL.
+![alt text](Images/Sales_Dashboard.PNG)
+
+
