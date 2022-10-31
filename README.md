@@ -68,4 +68,7 @@ For more detail and clear understanding, read [structure_streaming.py](Codes/str
 Created a dashboard in Apache Superset using data from sales and stocks tables in MySQL.
 ![alt text](Images/Sales_Dashboard.PNG)
 
+## Running the codes
+
+This is the video showing how the entire real-time sales data analysis system work after running all the codes. But it doesn’t show the entire sales data streaming as it will take a long time to stream the entire sales data.
 
