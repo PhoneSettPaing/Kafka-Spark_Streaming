@@ -13,10 +13,10 @@ The shop manually records everything in a book and didn’t use digital recordin
 ## Task:
 
 Find out if I can get answers to these questions using a real-time data analysis system:
-•	What is monthly and yearly sales?
-•	Which products produce highest sales?
-•	What products produce highest sales in which month?
-•	Which stocks are low?
-•	What stocks to refill in which month?
+*	What is monthly and yearly sales?
+*	Which products produce highest sales?
+*	What products produce highest sales in which month?
+*	Which stocks are low?
+*	What stocks to refill in which month?
 
 To see having a real-time data analysis or Point of Sales (POS) System will be helpful for the business or not?
