@@ -38,6 +38,6 @@ As it is not the actual data from the shop but from Kaggle, the data need to be 
 Sample of Sales Data
 ![alt text](Images/sales_data.PNG)
 
-Stock Quantity Data<br \>
+Stock Quantity Data<br />
 ![alt text](Images/stock_quantity.PNG)
 
