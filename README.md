@@ -20,3 +20,9 @@ Find out if I can get answers to these questions using a real-time data analysis
 *	What stocks to refill in which month?
 
 To see having a real-time data analysis or Point of Sales (POS) System will be helpful for the business or not?
+
+## Data Platform Architecture
+
+![alt text]([https://github.com/PhoneSettPaing/IBM-Data-Engineering/blob/597bd156489f2ad7f60fec471ff007a6671244e2/Data_Engineering_Capstone_Project/data_platform_architecture.png](https://github.com/PhoneSettPaing/Kafka-Spark_Streaming/blob/07650e72f45916420d371bfde153dcbcbdce373b/Images/Data_Platform_Architecture.PNG])
+
+This is the data platform architecture that I have created for this project. When customers make purchases at checkout counter, the sales information data are passed to Kafka producer and send them to Kafka topic. When the data come to Kafka topic in the messaging layer, those data are ingested and processed using Apache Spark streaming application. The raw data are stored in MongoDB and processed data are then stored in MySQL database. The stored data in MySQL are pulled and build live dashboard using Apache Superset.
