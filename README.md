@@ -1,4 +1,4 @@
-# Real-Time Data Analysis
+# Real-Time Sales Data Analysis Application
 
 ## What and Why I am building this project?
 
